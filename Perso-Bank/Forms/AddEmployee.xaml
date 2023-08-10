@@ -1,0 +1,55 @@
+﻿<Window x:Class="Perso_Bank.Forms.AddEmployee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Perso_Bank.Forms"
+        mc:Ignorable="d"  Loaded="Window_Loaded"
+        Title="Manage Employees" Height="450" Width="800">
+
+    <Canvas Margin="0,0,0,4">
+
+        <Label Content="First Name" HorizontalAlignment="Left" VerticalAlignment="Top" Width="151" Height="26" Canvas.Left="90" Canvas.Top="106"/>
+        <Label Content="Last Name" HorizontalAlignment="Left" VerticalAlignment="Top" Width="151" Height="26" Canvas.Left="405" Canvas.Top="106"/>
+        <Label Content="Extention" HorizontalAlignment="Left" VerticalAlignment="Top" Width="127" Height="26" Canvas.Left="90" Canvas.Top="175"/>
+        <TextBox x:Name="txtbox_FName" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Canvas.Left="241" Canvas.Top="110"/>
+        <TextBox x:Name="txtbox_LName" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Canvas.Left="556" Canvas.Top="110"/>
+        <TextBox x:Name="txtbox_ext" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Canvas.Left="241" Canvas.Top="182"/>
+        <Label Content="eMail" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="26" Canvas.Left="90" Canvas.Top="138"/>
+        <TextBox x:Name="txtbox_email" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="435" Canvas.Left="241" Canvas.Top="146"/>
+        <CheckBox x:Name="chkbox_isAdmin" Content="Is Administrator" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="452" Canvas.Top="179"/>
+        <Label Content="Employee Managment" HorizontalAlignment="Left" VerticalAlignment="Top" Width="359" Height="47" FontSize="22" Canvas.Left="90" Canvas.Top="44"/>
+        <Button Content="Add" Canvas.Left="576" Canvas.Top="248" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="35" Click="Button_Click"/>
+        <Label Content="Login" Width="110" Height="26" Canvas.Left="89" Canvas.Top="207" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.519"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Password" Width="90" Height="26" Canvas.Left="405" Canvas.Top="211" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtbox_login" TextWrapping="Wrap" Width="120" Canvas.Left="241" Canvas.Top="215" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtbox_password" TextWrapping="Wrap" Width="120" Canvas.Left="556" Canvas.Top="215" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <DataGrid  CanUserAddRows="False"   x:Name="DG_datagrid" HorizontalAlignment="Left" Height="108" VerticalAlignment="Center" Width="601" AutoGenerateColumns="False" Canvas.Left="75" Canvas.Top="288">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding id}"/>
+                <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}"/>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName }"/>
+                <DataGridTextColumn Header="E-Mail" Binding="{Binding email}"/>
+                <DataGridTextColumn Header="Extension" Binding="{Binding Extension}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Remove"  Click="Button_Click_1"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Canvas>
+
+</Window>

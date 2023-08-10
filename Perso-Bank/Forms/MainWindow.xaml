@@ -1,0 +1,25 @@
+﻿<Window x:Class="Perso_Bank.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Perso_Bank"
+        mc:Ignorable="d" Loaded="Window_Loaded"
+        Title="MainWindow" Height="450" Width="800">
+
+
+        <Grid>
+
+            <Menu HorizontalAlignment="Left" >
+                <MenuItem x:Name="adminMenu" Header="Administration">
+                <MenuItem  HorizontalAlignment="Right" x:Name="addEmployee" Header="Employee Managment" Click="addEmployee_Click"/>
+
+                <MenuItem  HorizontalAlignment="Right" x:Name="addClient" Header="Client Managment" Click="addClient_Click"/>
+            </MenuItem>
+            <MenuItem   x:Name="accountMenu" Header="Account" >
+                <MenuItem x:Name="addAccount" Header="Create Account" Click="addAccount_Click" />
+                <MenuItem x:Name="manageExistingAccount" Header="Account Managment" Click="manageExistingAccount_Click" />
+            </MenuItem>
+        </Menu>
+        </Grid>
+</Window>

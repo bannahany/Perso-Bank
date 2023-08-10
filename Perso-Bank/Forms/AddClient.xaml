@@ -1,0 +1,50 @@
+﻿<Window x:Name="txtLName" x:Class="Perso_Bank.Forms.Add_Client"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Perso_Bank.Forms"
+        mc:Ignorable="d" Loaded="Window_Loaded"
+        Title="Add_Client" Height="488" Width="797">
+    <Canvas Margin="0,0,0,261">
+        <Label Content="First Name" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="54" Canvas.Top="110"/>
+        <Label Content="Last Name" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="339" Canvas.Top="110"/>
+        <Label Content="Telephone" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="341" Canvas.Top="142"/>
+        <Label Content="EMail" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="75" Canvas.Top="179"/>
+        <Label Content="Address" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="68" Canvas.Top="144"/>
+        <ComboBox  x:Name="comboAddress" Canvas.Left="126" Canvas.Top="144" Width="185" HorizontalAlignment="Left" VerticalAlignment="Top"  IsEditable="True" KeyUp="AutoCompleteComboBox_KeyUp" PreviewTextInput="AutoCompleteComboBox_PreviewTextInput" SelectionChanged="comboAddress_SelectionChanged"/>
+        <TextBox x:Name="txt_fName" Canvas.Left="126" TextWrapping="Wrap" Canvas.Top="114" Width="183" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="txt_lName" Canvas.Left="422" TextWrapping="Wrap" Canvas.Top="114" Width="171" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPhone" Canvas.Left="422" TextWrapping="Wrap" Canvas.Top="144" Width="171" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtEmail" Canvas.Left="126" TextWrapping="Wrap" Canvas.Top="182" Width="467" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button Content="Add Client" Height="21" Canvas.Left="551" Canvas.Top="237" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click"/>
+        <Label Content="Login" Canvas.Left="76" Canvas.Top="210" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Content="Password" Canvas.Left="61" Canvas.Top="236" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtLogin" Canvas.Left="126" TextWrapping="Wrap" Canvas.Top="214" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPassword" Canvas.Left="126" TextWrapping="Wrap" Canvas.Top="240" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Content="Add Client" Canvas.Left="29" Canvas.Top="24" HorizontalAlignment="Left" VerticalAlignment="Top" Width="314" FontSize="20">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
+        <DataGrid  CanUserAddRows="False"   x:Name="DG_datagrid" HorizontalAlignment="Left" Height="156" VerticalAlignment="Center" Width="576" AutoGenerateColumns="False" Canvas.Left="75" Canvas.Top="288">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="First Name" Binding="{Binding firstName}"/>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding lastName}"/>
+                <DataGridTextColumn Header="Telephone" Binding="{Binding telephone }"/>
+                <DataGridTextColumn Header="E-Mail" Binding="{Binding eMail}"/>
+                <DataGridTextColumn Header="Address" Binding="{Binding address}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Remove"  Click="Button_Click_1"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+
+    </Canvas>
+</Window>

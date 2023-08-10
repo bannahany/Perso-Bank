@@ -1,0 +1,21 @@
+﻿<Window x:Class="Perso_Bank.Forms.ManipulateAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Perso_Bank.Forms"
+        mc:Ignorable="d" Loaded="Window_Loaded"
+        Title="ManipulateAccount" Height="450" Width="750">
+    <Grid Margin="0,0,166,0">
+        <Label Content="Account Managment" HorizontalAlignment="Left" Height="41" Margin="34,30,0,0" VerticalAlignment="Top" Width="256" FontSize="24" FontWeight="Bold"/>
+        <Label Content="Choose Account" HorizontalAlignment="Left" Height="27" Margin="189,110,0,0" VerticalAlignment="Top" Width="145"/>
+        <ComboBox x:Name="dd_Account" HorizontalAlignment="Left" Height="27" Margin="354,110,0,0" VerticalAlignment="Top" Width="182"/>
+        <RadioButton x:Name="opt_Deposit" Content="Deposit Amount" HorizontalAlignment="Left" Margin="195,169,0,0" VerticalAlignment="Top" Width="109" Checked="opt_Deposit_Checked"/>
+        <RadioButton x:Name="opt_Withdraw" Content="Withdraw Amount" HorizontalAlignment="Left" Margin="323,169,0,0" VerticalAlignment="Top" Checked="opt_Withdraw_Checked"/>
+        <RadioButton x:Name="opt_Close" Content="Close Account" HorizontalAlignment="Left" Margin="451,169,0,0" VerticalAlignment="Top" Checked="opt_Close_Checked"/>
+        <Label Content="Amount" HorizontalAlignment="Left" Height="27" Margin="225,206,0,0" VerticalAlignment="Top" Width="61"/>
+        <TextBox x:Name="txtBox_Amount" HorizontalAlignment="Left" Height="27" Margin="354,206,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="182" FontSize="16"/>
+        <Button Content="Perform Transaction" HorizontalAlignment="Left" Margin="372,260,0,0" VerticalAlignment="Top" Width="133" Height="23" Click="Button_Click"/>
+
+    </Grid>
+</Window>
